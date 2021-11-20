@@ -322,7 +322,7 @@ border-radius: 400px;
 .suelo{
     width: 120%;
     height: 50%;
-    position: absolute;
+    position: fixed;
     background-color: #fff3bd;
     bottom: 0%;
     box-shadow: inset 0 0 70px #000000,
@@ -407,7 +407,7 @@ border-radius: 400px;
     display: flex;
     flex-direction: column;
     align-items:center;
-
+    overflow-y: auto;
 }
 
 .menuPrincipal h1{

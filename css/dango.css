@@ -1,0 +1,363 @@
+.dango{
+    z-index: 5;
+    position: absolute;
+    width: 300px;
+    height: 225px;
+    border-radius: 150px 150px 85px 85px;
+    background-color: rgb(0, 255, 149);
+    border: 5px solid #004b2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* background-color: rgb(255, 226, 96);
+border: 5px solid rgb(129, 114, 49); */
+.dangoBox{
+    position: absolute; 
+    width: 300px; 
+    height: 300px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+.masa{
+    width: 80px;
+    height: 40px;
+    background-color: rgb(187, 166, 71);
+    border: 5px solid rgb(78, 69, 30);
+}
+
+.pequeño{
+    width: 135px;
+    height: 105px;
+}
+.joven{
+    width: 200px;
+    height: 155px;
+
+}
+
+
+.dango:hover{
+    /* border: 2px solid white; */
+    box-shadow: 0 0 15px white;
+    cursor: pointer;
+}
+
+.dango span{
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    top: -50%;
+    left: 35%;
+    
+    border-radius: 0 0 6vw 6vw;
+    background: white;
+    box-shadow: 0 0 10px white;
+}
+
+
+/* Anatomia  */
+
+.dango .ojos{
+    width: 50%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: black; */
+}
+
+.ojos .ojo{
+    transition: transform 100ms;
+    position: relative;
+    width: 20px;
+    height: 100%;
+    background-color: #02683e;;
+    border-radius: 100px;
+    /* border: 2px solid rgb(0, 73, 43); */
+
+
+}
+
+/* extras  */
+
+.expresiones{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 5%;
+    width: 20%;
+    height: 20%;
+}
+
+
+.sombra{
+    z-index: 2;
+    position: absolute;
+    bottom: -10%;
+    height: 40%;
+    width: 100%;
+    background-color: black;
+    border-radius: 160px;
+    opacity: 85%;
+}
+/* hitboxes */
+
+
+.hitboxes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 150px 150px 85px 85px;
+}
+
+
+.hitboxes .cabezaH{
+    width: 90%;
+    height: 40%;
+    position: absolute;
+    top: 0%;
+}
+.hitboxes .barrigaH{
+    width: 90%;
+    height: 60%;
+    position: absolute;
+    bottom: 0%;
+}
+
+/* ropa */
+
+.sombreroFrio{
+    width: 110px;
+    height: 50px;
+    top: -20%;
+    box-shadow: 0 0 10px cadetblue;
+    position: absolute;
+    background-color: cadetblue;
+    border-radius: 4px;
+    left: -5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.exibicion{
+top: 0%;
+left: 0%;
+position:relative;
+}
+
+.emote{
+    opacity: 0%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: expresar 2s ease;
+}
+.emoteG{
+    opacity: 0%;
+    width: 60px;
+    height: 60px;
+    margin-bottom: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: expresar 2s ease;
+}
+.sombreroFrioTop{
+    width: 100px;
+    height: 50px;
+    top: -70%;
+    box-shadow: 0 0 10px rgb(25, 77, 78);
+    position: absolute;
+    background-color: rgb(27, 77, 78);
+    border-radius: 20px 20px 0 0; 
+    left: 4.5%;
+}
+
+
+
+/* animaciones  */
+
+
+
+.entrecerrar{
+    transition: transform 400ms;
+   transform: scaleY(0.1) scaleX(1.5);
+}
+
+.alegrarO{
+    animation: alegrarO 3s ease infinite;
+}
+
+
+@keyframes alegrarO{
+    0%{
+        border-radius: 10;
+        height: 100%;
+    }
+    15%{
+        border-radius: 10px 10px 0px 0px;
+        height: 70%;
+        margin-bottom: 18%;
+    }
+    85%{
+
+        border-radius: 10px 10px 0px 0px;
+        height: 70%;
+        margin-bottom: 18%;
+        
+    }
+    100%{
+        border-radius: 10px;
+        height: 100%;
+    }
+}
+
+.parpadeo{
+    animation: parpadeo 500ms ease;
+}
+
+@keyframes parpadeo {
+    0%{
+        transform: scaleY(100%);
+    }
+    50%{
+        transform: scaleY(0%);
+    }
+    100%{
+        transform: scaleY(100%);
+    }
+}
+
+@keyframes expresar{
+    0%{
+        opacity: 0%;
+        transform: translateY(0);
+    }
+
+    5%{
+        opacity: 100%;
+    }
+
+    20%{
+        transform: translateY(-300%);
+    }
+    69%{
+        opacity: 100%;
+    }
+    70%{
+        opacity: 0%;
+    }
+    75%{
+        opacity: 100%;
+    }
+    80%{
+        opacity: 0%;
+    }
+    85%{
+        opacity: 100%;
+        transform: translateY(-300%);
+    }
+    90%{
+        opacity: 0%;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 0%;
+    }
+}
+
+
+.retorcerse{
+    animation: retorcerse 1900ms infinite;
+}
+
+@keyframes retorcerse {
+    0%{
+        transform: scaleX(1) scaleY(1);
+    }
+    10%{
+        transform: scaleX(1.4) scaleY(0.7) translateY(10%);
+    }
+    20%{
+        transform: scaleX(1) scaleY(1);
+    }
+    30%{
+        transform: scaleX(1.4) scaleY(0.7)translateY(10%);
+    }
+    40%{
+        transform: scaleX(1) scaleY(1);
+    }
+    50%{
+        transform: scaleX(1.4) scaleY(0.7)translateY(10%);
+    }
+    60%{
+    transform: scaleX(1) scaleY(1);
+    }
+    70%{
+        transform: scaleX(1.4) scaleY(0.7)translateY(10%);
+    }
+    80%{
+    transform: scaleX(1) scaleY(1);
+    }
+    90%{
+    transform: scaleX(1.4) scaleY(0.7)translateY(10%);
+    }
+
+    100%{
+    transform: scaleX(1) scaleY(1);    
+    }
+
+
+}
+.moverOjosAD{
+    animation: moverOjosAD 3s ease;
+}
+@keyframes moverOjosAD {
+    0%
+    {
+        left: 12.5%;
+    }
+    15%{
+        left: 8%;
+    }
+    85%{
+        left: 8%;
+    }
+    
+    100%{
+        left: 12.5%;
+    }
+}
+.moverOjosAI{
+    animation: moverOjosAI 3s ease;
+}
+@keyframes moverOjosAI {
+    0%
+    {
+        left: 12.5%;
+    }
+    15%{
+        left: 16%;
+    }
+    85%{
+        left: 16%;
+    }
+    
+    100%{
+        left: 12.5%;
+    }
+}

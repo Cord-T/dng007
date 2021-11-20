@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/dango.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <title>Dango in Home</title>
+</head>
+<body style="background-image: url(img/fondos/FotoGod.jpg);">
+    
+    
+    <!-- _______________________objetos_______________________________
+    Aaca estan todos los objetos props y extras del fondo del juego 
+    ________________________________________________________________-->
+    <div class="screenObj fullscreen posFixed" id="screenObj">
+        <div class="suelo"></div>
+        <div class="cama">
+            <div class="colchon"></div>
+        </div>
+    </div>   
+
+    <!-- -----------------------CONTENIDO------------------------- -->
+    <!-- AQUI ESTA TODOS LOS OBJETOS INTERACTUABLES DE LA PANTALLA -->
+    <!-- --------------------------------------------------------- -->
+    <div class="contenedor">
+        <!-- INTERFAZ -->
+        <div class="interfaz fullscreen posAbsolute">
+    
+            <!-- ----------- -->
+            <!-- --INTEFAZ-- -->
+            <!-- ----------- -->
+            <button class="butonS bordlessTopRight nullTop nullRight" id="menuBtn"><img src="img/icons/menu.svg" alt=""></button>
+            <button class="butonH bordlessBotLeft nullBot nullLeft" id="invBtn"><img src="img/icons/mochila.svg" alt=""></button>
+            <button class="butonH bordlessBotRight nullBot nullRight" id="getOutBtn"><img src="img/icons/puerta.svg" alt=""></button>
+                 <!-- menus -->
+
+
+            <div class="menu menuPrincipal oculto" id="menuPrincipal">
+                <h1><strong>Menu</strong></h1>
+                <div class="content">
+                    <div class="menuOption">
+                        <div class="head"><img src="img/icons/tienda.svg" alt=""></div>
+                        <div class="name"><p><b>Tienda</b></p></div>
+                    </div>
+                    <div class="menuOption">
+                        <div class="head"><img src="img/icons/multiplayer.svg" alt=""></div>
+                        <div class="name"><p><b>Multijugador</b></p></div>
+                    </div>
+                    <div class="menuOption">
+                        <div class="head"><img src="img/icons/config.svg" alt=""></div>
+                        <div class="name"><p><b>Opciones</b></p></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+                <div class="menu invMen oculto"  id="standartInvMen">
+                    <div class="navBar"></div>
+                    <!-- <p class="cerrar">X</p> -->
+                        <div class="container col-12 articulos row">
+                            <div class="invMenObj col-6 col-md-3">
+                                <div class="header">
+                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
+                                </div>
+                                <div class="name">
+                                    <p>Sombrero de frio</p>
+                                </div>
+                            </div>
+                            <div class="invMenObj col-6 col-md-3">
+                                <div class="header">
+                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
+                                </div>
+                                <div class="name">
+                                    <p>Sombrero de frio</p>
+                                </div>
+                            </div>
+                            <div class="invMenObj col-6 col-md-3">
+                                <div class="header">
+                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
+                                </div>
+                                <div class="name">
+                                    <p>Sombrero de frio</p>
+                                </div>
+                            </div>
+                            <div class="invMenObj col-6 col-md-3">
+                                <div class="header">
+                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
+                                </div>
+                                <div class="name">
+                                    <p>Sombrero de frio</p>
+                                </div>
+                            </div>
+                            <div class="invMenObj col-6 col-md-3">
+                                <div class="header">
+                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
+                                </div>
+                                <div class="name">
+                                    <p>Sombrero de frio</p>
+                                </div>
+                            </div>
+                            <div class="invMenObj col-6 col-md-3">
+                                <div class="header">
+                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
+                                </div>
+                                <div class="name">
+                                    <p>Sombrero de frio</p>
+                                </div>
+                            </div>
+                            <div class="invMenObj col-6 col-md-3">
+                                <div class="header">
+                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
+                                </div>
+                                <div class="name">
+                                    <p>Sombrero de frio</p>
+                                </div>
+                            </div>
+                            <div class="invMenObj col-6 col-md-3">
+                                <div class="header">
+                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
+                                </div>
+                                <div class="name">
+                                    <p>Sombrero de frio</p>
+                                </div>
+                            </div>
+                            
+                            
+                            
+    
+                            
+
+
+                        </div>
+        
+        
+        
+                    </div>
+            </div>
+        
+        <!-- DANGO (PERSONAJE PRINCIPAL) -->
+        <div id="dangoBox"
+        class="dangoBox">
+        <!-- LA DANGO BOX ES LA CAJA DONDE SE ENCUENTRA EL DANGO,
+         ES PARA QUE LA ROPA Y OBJETOS SE MUEVAN JUNTO AL DANGO 
+         YA QUE SI NO EL TRANSFORM SE BUGEA -->
+        
+        <div class="dango joven" id="dango">
+                <div class="expresiones" id="expresiones">
+                    
+                </div>
+                <div class="ojos">
+                    <div class="ojo" id="ojo1"></div>
+                    <div class="ojo" id="ojo2"></div>
+                </div>
+                <!-- <div class="dialogos" id="dialogos">
+                    <div class="dialogo" id="deleteable"><p id="dialogo">`+texto+`</p></div> 
+                </div> -->
+                <div class="ropa">
+                </div>
+                <div class="hitboxes">
+                    <div class="cabezaH" id="cabezaH"></div>
+                    <div class="barrigaH" id="barrigaH"></div>
+                </div>
+                <!-- <div class="sombra"></div> -->
+            </div>
+            </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/objetos.js"></script>
+<script src="js/datos.js"></script>
+<script src="js/animaciones.js"></script>
+<script src="js/funciones.js"></script>
+<script src="js/interacciones.js"></script>
+<script src="js/onStartFunctions.js"></script>
+</html>

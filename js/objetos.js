@@ -11,7 +11,8 @@ const interfaz = {
     menus: {
         standartInvMen: document.getElementById("standartInvMen"),
         menuPrincipal: document.getElementById("menuPrincipal"),
-    }
+    },
+    sound: document.getElementById("sound"),
 }
 
 const partes = {
@@ -22,6 +23,15 @@ const partes = {
         ojo2: document.getElementById("ojo2")
     }
 };
+
+const funciones = {
+    sonido: (audio) => {
+        interfaz.sound.setAttribute("src",audio)
+        interfaz.sound.play();
+    }
+}
+
+
 
  
 

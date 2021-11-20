@@ -7,6 +7,7 @@ hitbox.cabeza.onmousedown = function (event) {
 hitbox.cabeza.onmouseup = function (event) {
     entrecerrar();
     expresar("amor");
+    funciones.sonido("audio/dango/loveExpresion.mp3")
 }
 
 hitbox.cabeza.addEventListener("touchstart", function (event) {
@@ -21,6 +22,7 @@ hitbox.cabeza.addEventListener("touchstart", function (event) {
 
 hitbox.cabeza.addEventListener("touchend", function (event) {
     expresar("amor");
+    funciones.sonido("audio/dango/loveExpresion.mp3")
     entrecerrar();
 })
 
@@ -40,7 +42,7 @@ hitbox.barriga.onmousedown = function (event) {
 hitbox.barriga.onmouseup = function (event) {
     reirse("stop")
     expresar("felicidad");
-
+    funciones.sonido("audio/randomTouch2.mp3")
 }
 
 hitbox.barriga.addEventListener("touchstart", function (event) {
@@ -55,6 +57,7 @@ hitbox.barriga.addEventListener("touchstart", function (event) {
 hitbox.barriga.addEventListener("touchend", function (event) {
     reirse("stop")
     expresar("felicidad");
+    funciones.sonido("audio/randomTouch2.mp3")
 })
 
 

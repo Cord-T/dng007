@@ -7,12 +7,14 @@ const interfaz = {
     botones: {
         configBtn: document.getElementById("menuBtn"),
         invBtn: document.getElementById("invBtn"),
+        getOutBtn: document.getElementById("getOutBtn")
     },
     menus: {
         standartInvMen: document.getElementById("standartInvMen"),
         menuPrincipal: document.getElementById("menuPrincipal"),
     },
     sound: document.getElementById("sound"),
+    loadScreen: document.getElementById("loadScreen")
 }
 
 const partes = {

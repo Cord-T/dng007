@@ -15,3 +15,9 @@ const expresiones = {
     ]
 
 };
+
+const permisos = {
+    parpadear: true,
+    tocandoCabeza:false,
+    tocandoBarriga:false,
+}

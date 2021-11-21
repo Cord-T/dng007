@@ -4,7 +4,7 @@
 let f = 0;
 setInterval(() => {
     f = numero_aleatorio(2)
-    if (f === 1) {
+    if (f == 1 && permisos.parpadear == true) {
         parpadeo()
     }else{
     }
@@ -25,7 +25,8 @@ setInterval(() => {
 //      }else{
 //      }
 //   }, 4000);
- 
+
+
 
 
 

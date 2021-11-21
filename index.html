@@ -10,17 +10,19 @@
 
     <title>Dango in Home</title>
 </head>
-<body style="background-image: url(img/fondos/FotoGod.jpg);">
+<body>
     
     
     <!-- _______________________objetos_______________________________
     Aaca estan todos los objetos props y extras del fondo del juego 
     ________________________________________________________________-->
-    <div class="screenObj fullscreen posFixed" id="screenObj">
-        <div class="suelo"></div>
-        <div class="cama">
-            <div class="colchon"></div>
-        </div>
+    <div class="screenProps fullscreen posFixed" id="screenProps">
+        <div style="background-image: url(img/fondos/FotoGod.jpg);" class="fullscreen posAbsolute" id="homeProps">
+            <div class="suelo"></div>
+                <div class="cama">
+                <div class="colchon"></div>
+            </div>
+    </div>
     </div>   
 
     <!-- -----------------------CONTENIDO------------------------- -->
@@ -38,8 +40,8 @@
             <button class="butonH bordlessBotRight nullBot nullRight" id="getOutBtn"><img src="img/icons/puerta.svg" alt=""></button>
                  <!-- menus -->
 
-
-            <div class="menu menuPrincipal oculto" id="menuPrincipal">
+            <!-- ----Menu Principal--- -->
+            <div class="menu menuPrincipal hiddenRight" id="menuPrincipal">
                 <h1><strong>Menu</strong></h1>
                 <div class="content">
                     <div class="menuOption">
@@ -58,12 +60,11 @@
                 </div>
 
             </div>
-
-
-
-                <div class="menu invMen oculto"  id="standartInvMen">
-                    <div class="navBar"></div>
-                    <!-- <p class="cerrar">X</p> -->
+            <!-- ---Menu Inventario--- -->
+            <div class="menu invMen hiddenTop"  id="standartInvMen">
+                    <div class="navBar">
+                        <div class="navInf"><h1>Inventario</h1></div>
+                    </div>
                         <div class="container col-12 articulos row">
                             <div class="invMenObj col-6 col-md-3">
                                 <div class="header">
@@ -73,74 +74,21 @@
                                     <p>Sombrero de frio</p>
                                 </div>
                             </div>
-                            <div class="invMenObj col-6 col-md-3">
-                                <div class="header">
-                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
-                                </div>
-                                <div class="name">
-                                    <p>Sombrero de frio</p>
-                                </div>
-                            </div>
-                            <div class="invMenObj col-6 col-md-3">
-                                <div class="header">
-                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
-                                </div>
-                                <div class="name">
-                                    <p>Sombrero de frio</p>
-                                </div>
-                            </div>
-                            <div class="invMenObj col-6 col-md-3">
-                                <div class="header">
-                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
-                                </div>
-                                <div class="name">
-                                    <p>Sombrero de frio</p>
-                                </div>
-                            </div>
-                            <div class="invMenObj col-6 col-md-3">
-                                <div class="header">
-                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
-                                </div>
-                                <div class="name">
-                                    <p>Sombrero de frio</p>
-                                </div>
-                            </div>
-                            <div class="invMenObj col-6 col-md-3">
-                                <div class="header">
-                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
-                                </div>
-                                <div class="name">
-                                    <p>Sombrero de frio</p>
-                                </div>
-                            </div>
-                            <div class="invMenObj col-6 col-md-3">
-                                <div class="header">
-                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
-                                </div>
-                                <div class="name">
-                                    <p>Sombrero de frio</p>
-                                </div>
-                            </div>
-                            <div class="invMenObj col-6 col-md-3">
-                                <div class="header">
-                                <div class="sombreroFrio exibicion"><div class="sombreroFrioTop"></div></div>
-                                </div>
-                                <div class="name">
-                                    <p>Sombrero de frio</p>
-                                </div>
-                            </div>
                             
-                            
-                            
-    
-                            
-
 
                         </div>
         
         
         
-                    </div>
+            </div>
+            <!-- ---Menu Spam/Avisos/decisiones--- -->
+            <div class="menu spamMenu hiddenIn absoluteObjectsContainer">
+                <h1>Anuncio</h1>
+                
+                <p>Estas a punto de vender un perrito, esta accion es irreversible</p>
+                <div>
+                <button class="btnG">SI</button> <button class="btnR">NO</button>
+            </div>
             </div>
         
         <!-- DANGO (PERSONAJE PRINCIPAL) -->
@@ -150,7 +98,7 @@
          ES PARA QUE LA ROPA Y OBJETOS SE MUEVAN JUNTO AL DANGO 
          YA QUE SI NO EL TRANSFORM SE BUGEA -->
         
-        <div class="dango joven" id="dango">
+        <div class="dango cursor-grab hover-light cyanDango joven " id="dango">
                 <div class="expresiones" id="expresiones">
                     
                 </div>
@@ -180,9 +128,19 @@
 
 
 
+    <div class="fullscreen hiddenLeft loadScreen" id="loadScreen">
+        <div class="dango saltar greenDango pequeño">
+            <div class="ojos">
+                <div class="ojo"></div>
+                <div class="ojo"></div>
+            </div>
+        </div>
+
+        <h1>Cargando</h1>
+       
+    </div>
 
     <audio src=""preload="auto" id="sound"></audio>
-
 </body>
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/objetos.js"></script>

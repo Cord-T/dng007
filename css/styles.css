@@ -7,8 +7,7 @@ body{
     height: 100%;
     font-family: monospace; 
     width: 100%;
-    background-repeat: repeat-y repeat-x;
-    background-position: center; 
+    
 }
 /* -----------CLASES CLAVE------------- */
 .fullscreen{
@@ -17,7 +16,26 @@ body{
     justify-content: center;    
     width: 100%;
     height: 100%; 
+    background-repeat: repeat-y repeat-x;
+    background-position: center; 
 }
+
+.absoluteObjectsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+.cursor-pointer{cursor: pointer;}
+.cursor-progress{cursor: progress;}
+.cursor-grab{cursor: grab;}
+.cursor-deny{cursor: not-allowed;}
+
+.hover-light:hover{box-shadow: 0 0 10px white;}
+.hover-black:hover{box-shadow: 0 0 10px black;}
 
 .posFixed{position: fixed;}
 .posAbsolute{position: absolute;}
@@ -78,13 +96,53 @@ body{
 }
 
 
+.hiddenRight{
+    transform: translateX(200%);
+    transition:transform 400ms;
+}
+.hiddenLeft{
+    transform: translateX(-200%);
+    transition:transform 400ms;
+}
+.hiddenTop{
+    transform: translateY(-200%);
+    transition: transform 400ms;
+}
+.hiddenButtom{
+    transform: translateY(200%);
+    transition: transform 400ms;
+}
+.hiddenIn{
+    transition: opacity 700ms;
+    transform: scale(0);
+    opacity: 0%;
+}
+
 .bordlessTopRight{border-radius: 20px 0px 20px 20px;}
 .bordlessTopLeft{border-radius: 0px 20px 20px 20px;}
 .bordlessBotRight{border-radius: 20px 20px 0px 20px;}
 .bordlessBotLeft{border-radius: 20px 20px 20px 0px;}
 
+.loadScreen{
+    z-index: 100;
+    position: fixed;
+    background: linear-gradient(217deg, #09ff00, #ffffff60 70.71%),
+                linear-gradient(127deg, #0026fffb, #00f7ff7a 70.71%),
+                linear-gradient(336deg, #ff0000, #000000 70.71% );
+    transition: transform 2s;
+    box-shadow: 0 0 160px black;
+    }
 
 
+.loadScreen h1{
+    position: absolute;
+    bottom: 30%;
+    color: rgb(255, 255, 255);
+    text-shadow: -5px 5px 10px #00eafffb,
+    5px -5px 10px #ff0000;
+    font-weight:bold;
+    font-size: 70px;
+}
 
 
 
@@ -126,67 +184,58 @@ body{
     height: 100%;
 }
 
-.dialogo{
-    margin: auto;
+/* PROPS (OBJETOS DEL ESCENARIO) */
+
+.cama{
     position: absolute;
-    display: table;
-    top: -70%;
-    width: 250px;
-    left: -0%;
-    height: 20px;
-    max-height: 70px ;
-    background-color: white;
-    box-shadow: 0 0 1vw white;
-    border-radius: 5px;
-    transition: transform 2s;
+    background-color: chocolate;
+    border-radius: 350px 350px 100px 100px;
+    width: 450px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 40px #753a0f,
+    0 20px 30px black;
 }
 
-.oculto{
-    transition: opacity 700ms;
-    transform: scale(0);
-    opacity: 0%;
-}
-
-.dialogo p{
-    margin: 4px;
-}
-.dialogo p{ 
-	position: relative; 
-	float: left;
-    font-size: 20px;
-}
-
-
-
-.escribir{
-    width:0;
-    animation: escribir 2s steps(30) alternate;
-}
-
-@keyframes escribir {
-  
-  from { width: 100% }
-    to { width:0 }
-}
-
-.descardedL{
-z-index: 1;
-width: 500px;
-height: 500px;
-background-color: white;
-position: absolute;
-box-shadow: 0 0 3vw white,
-inset 0 0 3vw white;
-top: -215px;
-left: -220px;
-border-radius: 400px;
-
-
-
+.cama .colchon{
+    width: 80%;
+    height: 60%;
+    border-radius: 120px;
+    position: absolute;
+    bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 50px solid #753a0f;
+    box-shadow: inset 0 0 25px #753a0f,
+    0 0 25px #753a0f;
+    background-color: #e2c542;
 }
 
 
-.invMen{
+.suelo{
+    width: 120%;
+    height: 50%;
+    position: fixed;
+    background-color: #fff3bd;
+    bottom: 0%;
+    box-shadow: inset 0 0 70px #000000,
+    0 0px 70px #000000;
+}
+
+
+
+
+/* ___________________________________________________ */
+/* __________________________MENUS____________________ */
+/* --------------------------------------------------- */
+
+/* ----------------MENU INVENTARIO------------------------ */
+
+.interfaz .invMen{
+    opacity: 100%;
     margin: 15px;
     width: 80%;
     /* justify-content: center; */
@@ -196,9 +245,78 @@ border-radius: 400px;
     position:absolute;
     background-color: #ffd16d;
     border: 5px solid #8d5813;
-    border-radius: 0vw 0vw 4vw 4vw;
+    box-shadow: inset 0 0 100px #8d5813;
+    border-radius: 20px 20px 20px 20px;
+    transition: transform 400ms;
     
 }
+.invMen .navBar{
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    top: 0%;
+    background-color: #8d5813;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #8d5813, inset 0 0 20px #8d5813;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.invMen .navInf{
+position: absolute;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+top: -50%;
+border-radius: 25px;
+width: 70%;
+height: 130%;
+box-shadow: 0 0 20px black,
+inset 0 0 10px #8d5813;
+background: #ffd16d;
+border: 5px solid  #8d5813;
+
+
+}
+
+.navInf::before{
+    box-shadow: 0 0 10px #8d5813,
+    inset 2px 2px 3px black;
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 3%;
+    background: #8d5813;
+    border-radius: 30px;
+
+}
+.navInf::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 3%;
+    box-shadow: 0 0 10px #8d5813,
+    inset 2px 2px 3px black;
+    background: #8d5813;
+    border-radius: 30px;
+
+}
+
+.navInf h1{
+    position: absolute;
+    font-size: auto;
+    color: black;
+    font-weight: 900;
+    text-shadow: 0px 0px 2px #8d5813;
+}
+
+
 .invMen .cerrar{
     position: absolute;
     width: 55px;
@@ -228,43 +346,8 @@ border-radius: 400px;
     border: 2px solid rgb(187, 0, 0);
     cursor: pointer;
 }
-.invMen .navBar{
-    width: 100%;
-    height: 15%;
-    position: absolute;
-    top: 0%;
-    background-color: #8d5813;
-    
-}
-.invMenObj{
-    color: black;
-    width: 200px;
-    height: 200px;
-    min-width: 220px;
-    min-height: 220px;
-    /* margin: 5px; */
-    border: 5px solid #8d5813;
-    display: flex;
-    position:relative;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.623);
-    border-radius: 10px;
-    transition: all 200ms;
-}
-.invMenObj img{
-    width: 100%;
-    height: 100%;
-}
-.invMenObj:hover{
-    transition: all 200ms;
-    border: 5px solid white;
-    border-radius: 0px;
-    box-shadow: 0 0 10px white,
-    inset 0 0 30px white;
-    cursor: pointer;
-}
+
+
 .invMen .header{
     width: 100%;
     height: 80%;
@@ -287,122 +370,18 @@ border-radius: 400px;
 
 }
 
-.screenObj img{
-    width: 120%;
-    position: absolute;
-    right: -15%;
-}
 
-
-.cama{
-    position: absolute;
-    background-color: chocolate;
-    border-radius: 350px 350px 100px 100px;
-    width: 450px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 0 40px #753a0f,
-    0 20px 30px black;
-}
-
-.cama .colchon{
-    width: 80%;
-    height: 60%;
-    border-radius: 120px;
-    position: absolute;
-    bottom: 2%;
-    border-top: 50px solid #753a0f;
-    box-shadow: inset 0 0 15px #753a0f,
-    0 0 25px #753a0f;
-    background-color: rgb(226, 197, 66);
-}
-
-.suelo{
-    width: 120%;
-    height: 50%;
-    position: fixed;
-    background-color: #fff3bd;
-    bottom: 0%;
-    box-shadow: inset 0 0 70px #000000,
-    0 0px 70px #000000;
-}
-
-
-/* INTERFAZ------------------ */
-
-/* .interfaz{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-.interfaz .menuBtn{
-    z-index: 99;
-    transition: all 400ms;
-    background: #00ff80;
-    border-radius: 20px 0px 20px 20px;
-    border:4px solid  #00e271bd;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    font-size: 5vw;
-    cursor: pointer;
-}
-.interfaz .menuBtn:hover{
-    transition: all 400ms;
-    border: 4px solid #007c3e;
-}
-.interfaz .menuBtn:active{
-    transition: all 400ms;
-    background: #00d46a;
-    transform: scale(0.7);
-}
-.interfaz .menuBtn img{
-    width: 100%;
-    height: 100%;
-}
-
-.interfaz .invBtn{
-    z-index: 99;
-    transition: all 400ms;
-    background-color: #ffcb5c;
-    border: 5px solid #8d6e18;
-    border-radius: 20px 20px 20px 0px;
-    width: 125px;
-    height: 125px;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    font-size: 5vw;
-    bottom: 0%;
-    left: 0%;
-    cursor: pointer;
-}
-.interfaz .invBtn:hover{
-    transition: all 400ms;
-    border: 5px solid #dd9d3d;
-}
-.interfaz .invBtn:active{
-    transition: all 200ms;
-    background: #ffcb5abb;
-    transform: scale(0.9);
-}
-
+/* -------------------------MENU PRINCIPAL--------------------- */
 
 .interfaz .menuPrincipal{
+    opacity: 100%;
+    transition: transform 400ms;
     color: white;
     position: fixed;
     width: 400px;
     height: 100%;
-    background: rgba(0, 0, 0, 0.438);
+    box-shadow: inset 0px 0px 10px white;
+    background: rgba(0, 0, 0, 0.609);
     right: 0%;
     display: flex;
     flex-direction: column;
@@ -410,13 +389,142 @@ border-radius: 400px;
     overflow-y: auto;
 }
 
-.menuPrincipal h1{
+.interfaz .menuPrincipal h1{
     color: white;
     margin: 30px;
     font-size: 50px;
 }
 
-.menuOption{
+
+/* ----------------------MENU DE AVISOS/DECISIONES----------------- */
+
+.spamMenu{
+    width: 70%;
+    height: 50%;
+    background-color: #ffd16d;
+    border: 5px solid hsl(34, 76%, 31%);
+    box-shadow: inset 0 0 30px #8d5813;
+    border-radius: 20px 20px 20px 20px;
+    transition: transform 400ms;
+    
+}
+.spamMenu h1{
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd16f;
+    border: 5px solid #8d5813;
+    box-shadow: inset 0 0 20px #8d5813;
+    border-radius: 20px 20px 20px 20px;
+    transition: transform 400ms;
+    width: 50%;
+    height: 10%;
+    
+}
+
+ .spamMenu h1::before{
+    box-shadow: 0 0 10px #8d5813,
+    inset 2px 2px 3px black;
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 3%;
+    background: #8d5813;
+    border-radius: 30px;
+
+}
+ .spamMenu h1::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 3%;
+    box-shadow: 0 0 10px #8d5813,
+    inset 2px 2px 3px black;
+    background: #8d5813;
+    border-radius: 30px;
+
+}
+
+ .spamMenu p{
+    width: 90%;
+    box-shadow: 0 0 10px #8d5813,
+    inset 2px 2px 3px black;
+    background: #ffd16d;
+    border-radius: 30px;
+    color: black;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 70%;
+}
+
+ .spamMenu div{
+     font-size: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5%;    
+}
+ .spamMenu div .btnG{
+    background-color: #00ff55ab;
+    border: 5px solid #009468a1;
+    width: 40%;
+    height: 55px;
+    box-shadow: inset 0 0 10px #8d6e18;
+    border-radius: 5px;
+    transition: transform 400ms;
+}
+ .spamMenu div .btnG:hover{
+    background-color: #00ff55;
+    border: 5px solid #01976a;
+}
+ .spamMenu div .btnG:active{
+    background-color: #00a838;
+    border: 5px solid #006144;
+    transition: transform 400ms;
+    transform: scale(0.9);
+}
+ .spamMenu div .btnR{
+    background-color: #ff0000ab;
+    border: 5px solid #970101ab;
+    width: 40%;
+    height: 55px;
+    box-shadow: inset 0 0 10px #8d6e18;
+    border-radius: 5px;
+    transition: transform 400ms;
+}
+ .spamMenu div .btnR:hover{
+    background-color: #ff0000;
+    border: 5px solid #970101;
+}
+ .spamMenu div .btnR:active{
+    background-color: #ca0000;
+    border: 5px solid #610000;
+    transition: transform 400ms;
+    transform: scale(0.9);
+}
+
+
+
+
+/* ------------------------------------------------------ */
+/* ----------------------------OBJETOS DE MENUS------- */
+/* ------------------------------------------------------ */
+
+
+/* ---------------OPCIONES DE MENU PRINCIPAL -------- */
+
+
+.menuPrincipal .menuOption{
     color: black;
     margin: 10px;
     width: 200px;
@@ -430,7 +538,7 @@ border-radius: 400px;
     position: relative;
     flex-direction: column;
     cursor: pointer;
-    transition: transform 400ms;
+    
 }
 .menuOption:hover{
     border: 10px solid #d2841e;
@@ -466,4 +574,34 @@ border-radius: 400px;
 
 }
 
+/* --------------------OBJETOS DE INVENTARIO------------- */
 
+.invMen .invMenObj{
+    color: black;
+    width: 230px;
+    height: 230px;
+    min-width: 230px;
+    min-height: 230px;
+    margin: 10px;
+    border: 5px solid #8d5813;
+    display: flex;
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.623);
+    border-radius: 10px;
+    transition: all 200ms;
+}
+.invMen .invMenObj img{
+    width: 100%;
+    height: 100%;
+}
+.invMen .invMenObj:hover{
+    transition: all 200ms;
+    border: 5px solid white;
+    border-radius: 0px;
+    box-shadow: 0 0 10px white,
+    inset 0 0 30px white;
+    cursor: pointer;
+}
